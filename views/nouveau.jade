@@ -1,0 +1,104 @@
+!!!
+html
+  head
+    title= title
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='/stylesheets/vendor/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/tables.css')
+    link(rel='stylesheet', href='/stylesheets/nouveau.css')
+    script(src='/javascripts/vendor/jquery-1.9.1.js')
+    script(src='/javascripts/vendor/jquery.validate.min.js')
+    script(src='/javascripts/vendor/additional-methods.min.js')
+    script(src='/javascripts/vendor/bootstrap.min.js')
+    script(src="/javascripts/ajoutElement.js")
+    script(src="/javascripts/nouveau.js")
+  
+  //Design de la page: http://limcheekin.blogspot.ca/2012/08/twitter-bootstrap-multiple-columns-form.html
+  body
+
+    .row-fluid
+        .span4
+        .span4
+            h1= title
+
+    .container-fluid
+        form.horizontal-form(action="/entrerDossier", method="POST" role="form")
+            .row-fluid
+                .span8
+                    .row-fluid
+                        .span12#alert_placeholder
+            .row-fluid
+                .span6
+                    .control-group
+                        label.control-label(for="nom") Nom
+                        .controls
+                            input#nom.form-control(type="text" name="nom" data-msg-required="Vous devez entrer un nom" required)
+                .span6
+                    .control-group
+                        label.control-label(for="prenom" control-label) Prénom
+                        .controls
+                            input#prenom(type="text" name="prenom" required data-msg-required="Vous devez entrer un prénom.")
+            .row-fluid
+                .span6
+                    .control-group
+                        label.control-label(for="sexe" control-label) Sexe:
+                        .controls
+                            select#sexe(name='sexe' required data-msg-required="Vous devez choisir un sexe.")
+                                option(value=0) Inconnu
+                                option(value=1) Masculin
+                                option(value=2) Féminin
+                                option(value=9) Sans Objet
+                .span6
+                    .control-group
+                        label.control-label(for="date_naissance" control-label) Date de Naissance
+                        .controls
+                            input#date_naissance(type="text" name="date_naissance" placeholder='AAAA-MM-JJ' pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])" required data-msg-required="Vous devez entrer une date de naissance." data-msg-pattern="Format de date invalide.")
+            .row-fluid
+                .span6
+                    .control-group
+                        label.control-label(for="no_ass_maladie" control-label) Numéro d'assurance maladie
+                        .controls
+                            input#no_ass_maladie(type="text" name="no_ass_maladie" pattern="[A-Z]{4}[0-9]{8}" required data-msg-required="Vous devez entrer un numéro d'assurance maladie." data-msg-pattern="Format de numéro d'assurance maladie invalide.")
+                .span6
+                    .control-group
+                        label.control-label(for="telephone" control-label) Téléphone
+                        .controls
+                            input#telephone(type="text" name="telephone" pattern="[0-9]{3} [0-9]{3}-[0-9]{4}" required data-msg-required="Vous devez entrer un numéro de téléphone." data-msg-pattern="Format de numéro de téléphone invalide.")
+            .row-fluid
+                .span6
+                    .control-group
+                        label.control-label(for="adresse" control-label) Adresse:
+                        .controls
+                            input#adresse(type="text" name="rue" placeholder="Numéro et rue")
+                .span6
+                    .control-group
+                        label.control-label(for="apt" control-label) Appartement:
+                        .controls
+                            input#apt(type="text" name="appartement")
+            .row-fluid
+                .span6
+                    .control-group
+                        label.control-label(for="ville" control-label) Ville
+                        .controls
+                            input#ville(type="text" name="ville")
+                .span6
+                    .control-group
+                        label.control-label(for="province" control-label) Province:
+                        .controls
+                            input#province(type="text" name="province")
+            .row-fluid
+                .span6
+                    .control-group
+                        label.control-label(for="code_postal" control-label) Code postal:
+                        .controls
+                            input#code_postal(type="text" name="code_postal")
+
+            fieldset#antecedents.well
+                legend Antécédents médicaux
+            .row-fluid
+                .span6
+                    .control-group
+                        input.btn.btn-primary.add#antecedent(type="button" value="Ajouter un antécédent")
+            .row-fluid
+                button.btn.btn-primary(type='submit') Entrer le dossier
+

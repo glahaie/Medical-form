@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dossiers>
+  <dossier>
+    <numero>133</numero>
+    <date_ouverture>2013-10-25</date_ouverture>
+    <nom>lahaie</nom>
+    <prenom>luc</prenom>
+    <sexe>2</sexe>
+    <date_naissance>1312-11-11</date_naissance>
+    <no_ass_maladie>LAHG12345678</no_ass_maladie>
+    <telephone>555 555-5555</telephone>
+    <rue/>
+    <appartement/>
+    <ville/>
+    <province/>
+    <code_postal/>
+    <antecedents>
+      <antecedent>
+        <date>2012-12-12</date>
+        <description>12</description>
+      </antecedent>
+    </antecedents>
+    <notes/>
+    <visites/>
+    <suivis/>
+  </dossier>
+  <dossier>
+    <numero>129</numero>
+    <date_ouverture>2013-10-09</date_ouverture>
+    <date_fermeture/>
+    <nom>Lahaie</nom>
+    <prenom>Guillaume</prenom>
+    <sexe>1</sexe>
+    <date_naissance>1977-07-04</date_naissance>
+    <no_ass_maladie>LAHG12345678</no_ass_maladie>
+    <telephone>514 849-6826</telephone>
+    <rue>6000 avenue du Parc</rue>
+    <appartement>#6</appartement>
+    <ville>Montréal</ville>
+    <province>Québec</province>
+    <code_postal>H2V4H3</code_postal>
+    <antecedents/>
+    <notes/>
+    <suivis/>
+    <visites>
+      <visite>
+        <date>2013-11-14</date>
+        <description>Encore une visite</description>
+      </visite>
+    </visites>
+  </dossier>
+  <dossier>
+    <numero>139</numero>
+    <date_ouverture>2013-11-14</date_ouverture>
+    <date_fermeture/>
+    <nom>Lahaie</nom>
+    <prenom>Guillaume</prenom>
+    <sexe>1</sexe>
+    <date_naissance>1999-12-31</date_naissance>
+    <no_ass_maladie>LAHG12345678</no_ass_maladie>
+    <telephone>123 456-7890</telephone>
+    <rue/>
+    <appartement/>
+    <ville/>
+    <province/>
+    <code_postal/>
+    <antecedents/>
+    <notes/>
+    <suivis/>
+    <visites>
+      <visite>
+        <date>2012-12-31</date>
+        <description>Pas assez bu pour la fin d'année.</description>
+      </visite>
+    </visites>
+  </dossier>
+  <dossier>
+    <numero>140</numero>
+    <date_ouverture>2013-11-14</date_ouverture>
+    <nom>Lahaie</nom>
+    <prenom>Guillaume</prenom>
+    <sexe>1</sexe>
+    <date_naissance>1999-12-31</date_naissance>
+    <no_ass_maladie>LAHG12345678</no_ass_maladie>
+    <telephone>123 456-7890</telephone>
+    <rue/>
+    <appartement/>
+    <ville/>
+    <province/>
+    <code_postal/>
+    <date_fermeture>1999-12-12</date_fermeture>
+    <antecedents/>
+    <notes/>
+    <suivis/>
+    <visites/>
+  </dossier>
+  <dossier>
+    <numero>146</numero>
+    <date_ouverture>2013-11-15</date_ouverture>
+    <date_fermeture/>
+    <nom>Lahaie</nom>
+    <prenom>Guillaume</prenom>
+    <sexe>Sans Objet</sexe>
+    <date_naissance>1977-07-04</date_naissance>
+    <no_ass_maladie>LAHG04077707</no_ass_maladie>
+    <telephone>514 849-6826</telephone>
+    <rue>6000 avenue du Parc</rue>
+    <appartement>6</appartement>
+    <ville>Montréal</ville>
+    <province>Québec</province>
+    <code_postal>H2V 4H3</code_postal>
+    <antecedents>
+      <antecedent>
+        <date>2013-11-13</date>
+        <description>RV chez le chiropracticien.</description>
+      </antecedent>
+    </antecedents>
+    <notes/>
+    <suivis/>
+    <visites/>
+  </dossier>
+  <dossier>
+    <numero>147</numero>
+    <date_ouverture>2013-11-15</date_ouverture>
+    <nom>Lahaie</nom>
+    <prenom>Guillaume</prenom>
+    <sexe>9</sexe>
+    <date_naissance>1977-07-04</date_naissance>
+    <no_ass_maladie>LAHG04077707</no_ass_maladie>
+    <telephone>514 849-6826</telephone>
+    <rue>6000 avenue du Parc</rue>
+    <appartement>6</appartement>
+    <ville>Montréal</ville>
+    <province>Québec</province>
+    <code_postal>H2V 4H3</code_postal>
+    <date_fermeture/>
+    <antecedents/>
+    <notes/>
+    <suivis>
+      <suivi>
+        <date>2013-12-01</date>
+        <description>Prochain RV chez le chiro.</description>
+      </suivi>
+    </suivis>
+    <visites/>
+  </dossier>
+  <dossier>
+    <numero>141</numero>
+    <date_ouverture>2013-11-14</date_ouverture>
+    <nom>Lahaie</nom>
+    <prenom>Guillaume</prenom>
+    <sexe>1</sexe>
+    <date_naissance>1999-12-31</date_naissance>
+    <no_ass_maladie>LAHG12345678</no_ass_maladie>
+    <telephone>123 456-7890</telephone>
+    <rue/>
+    <appartement/>
+    <ville/>
+    <province/>
+    <code_postal>H2V4H3</code_postal>
+    <date_fermeture/>
+    <antecedents>
+      <antecedent>
+        <date>2011-07-14</date>
+        <description>Dislocation de l'épaule</description>
+      </antecedent>
+    </antecedents>
+    <notes/>
+    <suivis/>
+    <visites/>
+  </dossier>
+  <dossier>
+    <numero>145</numero>
+    <date_ouverture>2013-11-14</date_ouverture>
+    <nom>Nom</nom>
+    <prenom>Pas</prenom>
+    <sexe>9</sexe>
+    <date_naissance>2013-11-14</date_naissance>
+    <no_ass_maladie>JJJJ99999999</no_ass_maladie>
+    <telephone>514 555-5555</telephone>
+    <rue>6000 avenue du Parc</rue>
+    <appartement>6</appartement>
+    <ville>Montréal</ville>
+    <province>Québec</province>
+    <code_postal/>
+    <date_fermeture/>
+    <antecedents/>
+    <notes/>
+    <suivis>
+      <suivi>
+        <date>1999-12-12</date>
+        <description>On vérifie les suivis.</description>
+      </suivi>
+    </suivis>
+    <visites/>
+  </dossier>
+  <dossier>
+    <numero>142</numero>
+    <date_ouverture>2013-11-14</date_ouverture>
+    <nom>Lahaie</nom>
+    <prenom>Carmen</prenom>
+    <sexe>2</sexe>
+    <date_naissance>1949-09-07</date_naissance>
+    <no_ass_maladie>LAHG12345678</no_ass_maladie>
+    <telephone>514 388-8389</telephone>
+    <rue/>
+    <appartement/>
+    <ville/>
+    <province/>
+    <code_postal/>
+    <date_fermeture/>
+    <antecedents/>
+    <notes/>
+    <suivis/>
+    <visites/>
+  </dossier>
+  <dossier>
+    <numero>149</numero>
+    <date_ouverture>2013-11-15</date_ouverture>
+    <nom>A</nom>
+    <prenom>B</prenom>
+    <sexe>1</sexe>
+    <date_naissance>1111-11-11</date_naissance>
+    <no_ass_maladie>LLLL11111111</no_ass_maladie>
+    <telephone>111 111-1111</telephone>
+    <rue></rue>
+    <appartement></appartement>
+    <ville></ville>
+    <province></province>
+    <code_postal></code_postal>
+    <date_fermeture></date_fermeture>
+    <antecedents/>
+    <notes/>
+    <suivis>
+      <suivi>
+        <date>2013-12-01</date>
+        <description>Pas dans la liste</description>
+      </suivi>
+      <suivi>
+        <date>2013-11-15</date>
+        <description>En vert</description>
+      </suivi>
+      <suivi>
+        <date>2013-11-14</date>
+        <description>En blanc.</description>
+      </suivi>
+    </suivis>
+    <visites/>
+  </dossier>
+</dossiers>

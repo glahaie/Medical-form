@@ -1,0 +1,221 @@
+
+!!!
+html
+  head
+    title= title
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='/stylesheets/vendor/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/tables.css')
+    link(rel='stylesheet', href='/stylesheets/nouveau.css')
+    script(src='/javascripts/vendor/jquery-1.9.1.js')
+    script(src='/javascripts/vendor/jquery.validate.min.js')
+    script(src='/javascripts/vendor/additional-methods.min.js')
+    script(src='/javascripts/vendor/bootstrap.min.js')
+    script(src="/javascripts/ajoutElement.js")
+    script(src="/javascripts/modifier.js")
+  
+    //Design de la page: http://limcheekin.blogspot.ca/2012/08/twitter-bootstrap-multiple-columns-form.html
+
+  sexeChoix = {0: 'Inconnu', 1:'Masculin',2:'Féminin',9:'Sans objet'}
+  body
+    .row-fluid
+        .span3
+        .span6
+            h1= title
+
+    .container-fluid
+        form.horizontal-form.myform(action="/entrerDossier", method="POST" role="form")
+            .row-fluid
+                .span8
+                    .row-fluid
+                        .span12#alert_placeholder
+
+             .row-fluid
+                .span6
+                    .control-group
+                        label.control-label(for="numero") Numéro
+                        .controls
+                            input#numero(type='text' value="#{dossier.numero}" name="numero" readonly)
+                .span6
+                    .control-group
+                        label.control-label(for="date_ouverture") Date d'ouverture
+                        .controls
+
+                            input#date_ouverture(type='text' value="#{dossier.date_ouverture}" name="date_ouverture" readonly)
+
+            //Champs statiques: on ne peut en ajouter / les enlever du formulaire
+            .row-fluid
+                .span6
+                    .control-group
+                        label.control-label(for="nom") Nom
+                        .controls
+                            input#nom(type="text" name="nom" value="#{dossier.nom}" required data-msg-required="Vous devez entrer un nom.")
+                .span6
+                    .control-group
+                        label.control-label(for="prenom" control-label) Prénom
+                        .controls
+                            input#prenom(type="text" name="prenom" value="#{dossier.prenom}" required data-msg-required="Vous devez entrer un prénom.")
+            .row-fluid
+                .span6
+                    .control-group
+                        label.control-label(for="sexe" control-label) Sexe:
+                        .controls
+                            select#sexe(name='sexe' required data-msg-required="Vous devez un sexe.")
+                                each v, k in sexeChoix
+                                    if (parseInt(dossier.sexe,10) === parseInt(k,10))
+                                        option(value=parseInt(k,10) selected) #{v}
+                                    else
+                                        option(value=k) #{v}
+                .span6
+                    .control-group
+                        label.control-label(for="date_naissance" control-label) Date de Naissance
+                        .controls
+                            input#date_naissance(type="text" value="#{dossier.date_naissance}" name="date_naissance" placeholder='AAAA-MM-JJ' pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])" required data-msg-required="Vous devez entrer une date de naissance." data-msg-pattern="Format de date invalide.")
+            .row-fluid
+                .span6
+                    .control-group
+                        label.control-label(for="no_ass_maladie" control-label) Numéro d'assurance maladie
+                        .controls
+                            input#no_ass_maladie(type="text" value="#{dossier.no_ass_maladie}" name="no_ass_maladie" pattern="[A-Z]{4}[0-9]{8}" required data-msg-required="Vous devez entrer un numéro d'assurance maladie." data-msg-pattern="Format de numéro d'assurance maladie invalide.")
+                .span6
+                    .control-group
+                        label.control-label(for="telephone" control-label) Téléphone
+                        .controls
+                            input#telephone(type="text" value="#{dossier.telephone}" name="telephone" pattern="[0-9]{3} [0-9]{3}-[0-9]{4}" required data-msg-required="Vous devez entrer un numéro de téléphone." data-msg-pattern="Format de numéro de téléphone invalide.")
+            .row-fluid
+                .span6
+                    .control-group
+                        label.control-label(for="adresse" control-label) Adresse:
+                        .controls
+                            input#adresse(type="text" value="#{dossier.rue}" name="rue" placeholder="Numéro et rue")
+                .span6
+                    .control-group
+                        label.control-label(for="apt" control-label) Appartement:
+                        .controls
+                            input#apt(type="text" value="#{dossier.appartement}" name="appartement")
+            .row-fluid
+                .span6
+                    .control-group
+                        label.control-label(for="ville" control-label) Ville
+                        .controls
+                            input#ville(type="text" value="#{dossier.ville}" name="ville")
+                .span6
+                    .control-group
+                        label.control-label(for="province" control-label) Province:
+                        .controls
+                            input#province(type="text" value="#{dossier.province}" name="province")
+            .row-fluid
+                .span6
+                    .control-group
+                        label.control-label(for="code_postal" control-label) Code postal:
+                        .controls
+                            input#code_postal(type="text" value="#{dossier.code_postal}" name="code_postal" pattern="[A-Z][0-9][A-Z] ?[0-9][A-Z][0-9]")
+                .span6
+                    .control-group
+                        label.control-label(for="date_fermeture" control-label) Date de fermeture :
+                        .controls
+                            input#date_fermeture(type="text" value="#{dossier.date_fermeture}" name="date_fermeture" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])")
+
+
+
+            //Pour les antécédents
+            fieldset#antecedents.well
+                legend Antécédents médicaux
+
+                if dossier.antecedents
+                    each a, i in dossier.antecedents
+                        .row-antecedent
+                            .row-fluid
+                                .span6
+                                    .control-group
+                                        label.control-label(for="date_antecedent"+i control-label) Date:
+                                        .controls
+                                            input(id="date_antecedent"+i type="text" name="date_antecedent"+i  value="#{a.date}" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])" data-msg-pattern="Format de date invalide" required data-msg-required="Vous devez entrer une date.")
+                                .span6
+                                    .control-group
+                                        label.control-label(for="description_antecedent"+i) Description:
+                                        .controls
+                                            textarea(id="description_antecedent"+i name="description_antecedent"+i   required data-msg-required="Vous devez entrer une description de l'antécédent.") #{a.description}
+                            .row-fluid
+                                .span6(style="padding-bottom:10px;")
+                                    input.remove.btn.btn-primary(type="button" value="Enlever cet antécédent")
+            .row-fluid
+                .span6
+                    .control-group
+                        input.btn.btn-primary.add#antecedent(type="button" value="Ajouter un antécédent")
+
+            fieldset#visites.well
+                legend Visites
+
+                if dossier.visites
+                    each v, i in dossier.visites
+                        .row-antecedent
+                            .row-fluid
+                                .span6
+                                    .control-group
+                                        label.control-label(for="date_visite"+i control-label) Date:
+                                        .controls
+                                            input(id="date_visite"+i type="text" name="date_visite"+i  value="#{v.date}" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])" data-msg-pattern="Format de date invalide" required data-msg-required="Vous devez entrer une date.")
+                                .span6
+                                    .control-group
+                                        label.control-label(for="description_visite"+i) Compte rendu:
+                                        .controls
+                                            textarea(id="description_visite"+i name="description_visite"+i required data-msg-required="Vous devez entrer une description de la visite.")  #{v.description}   
+                            .row-fluid
+                                .span6(style="padding-bottom:10px;")
+                                    input.remove.btn.btn-primary(type="button" value="Enlever cette visite")
+            .row-fluid
+                .span6
+                    .control-group
+                        input.btn.btn-primary.add#visite(type="button" value="Ajouter une visite")
+
+            fieldset#notes.well
+                legend Notes
+
+                if dossier.notes
+                    each n, i in dossier.notes
+                        .row-antecedent
+                            .row-fluid
+                                .span6
+                                    .control-group
+                                        label.control-label(for="date_note"+i control-label) Date:
+                                        .controls
+                                            input(id="date_note"+i type="text" name="date_note"+i  value="#{n.date}" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])" data-msg-pattern="Format de date invalide" required data-msg-required="Vous devez entrer une date.")
+                                .span6
+                                    .control-group
+                                        label.control-label(for="description_note"+i) Description:
+                                        .controls
+                                            textarea(id="description_note"+i name="description_note"+i required data-msg-required="Vous devez entrer une description de la note.") #{n.description}
+                            .row-fluid
+                                .span6(style="padding-bottom:10px;")
+                                    input.remove.btn.btn-primary(type="button" value="Enlever cette note")
+            .row-fluid
+                .span6
+                    .control-group
+                        input.btn.btn-primary.add#note(type="button" value="Ajouter une note")
+
+            fieldset#suivis.well
+                legend Suivis
+
+                if dossier.suivis
+                    each s, i in dossier.suivis
+                        .row-antecedent
+                            .row-fluid
+                                .span6
+                                    .control-group
+                                        label.control-label(for="date_suivi"+i control-label) Date:
+                                        .controls
+                                            input(id="date_suivi"+i type="text" name="date_suivi"+i  value="#{s.date}" pattern="[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])" data-msg-pattern="Format de date invalide" required data-msg-required="Vous devez entrer une date.")
+                                .span6
+                                    .control-group
+                                        label.control-label(for="description_suivi"+i) Description:
+                                        .controls
+                                            textarea(id="description_suivi"+i name="description_suivi"+i required data-msg-required="Vous devez entrer une description du suivi") #{s.description} 
+                            .row-fluid
+                                .span6(style="padding-bottom:10px;")
+                                    input.remove.btn.btn-primary(type="button" value="Enlever ce suivi")
+            .row-fluid
+                .span6
+                    .control-group
+                        input.btn.btn-primary.add#suivi(type="button" value="Ajouter un suivi")
+

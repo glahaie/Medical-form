@@ -1,0 +1,98 @@
+extends layout
+
+block content
+    .row-fluid
+        .span4
+        .span4
+            h1= title
+    - var url = "/" + dossier.numero + "/modifier/"
+
+    .row-fluid.well.couleur
+        .span4
+        .span6
+            .span2
+            .span4
+                a.btn.btn-primary(href=url) Modifier le dossier
+
+    table.table
+        thead
+        tbody
+            tr
+                td Numéro de dossier:
+                td #{dossier.numero}
+            tr
+                td Prénom:
+                td #{dossier.prenom}
+            tr
+                td Nom:
+                td #{dossier.nom}
+            tr
+                td Sexe:
+                sexe = parseInt(dossier.sexe, 10)
+                if sexe === 0
+                    td Inconnu
+                else if sexe === 1
+                    td Masculin
+                else if sexe ===2
+                    td Féminin
+                else if sexe === 9
+                    td Sans objet
+            tr
+                td Date de naissance:
+                td #{dossier.date_naissance}
+            tr
+                td Date d'ouverture:
+                td #{dossier.date_ouverture}
+            tr
+                td Date de fermeture:
+                td #{dossier.date_fermeture}
+            tr
+                td Numéro d'assurance maladie:
+                td #{dossier.no_ass_maladie}
+            tr
+                td Adresse:
+                td  
+                    ul.unstyled 
+                        li #{dossier.rue}  #{dossier.appartement} 
+                        li #{dossier.ville}, #{dossier.province} #{dossier.code_postal}
+
+            tr.success
+                td.titre(colspan=2) Antécédents
+            tr
+                td.gras Date
+                td.gras Description
+            -if (dossier.antecedents)
+                each antecedent in dossier.antecedents
+                    tr
+                        td #{antecedent.date}
+                        td #{antecedent.description}
+            tr.success
+                td.titre(colspan=2) Notes
+            tr
+                td.gras Date
+                td.gras Description
+            -if (dossier.notes)
+                each note in dossier.notes
+                    tr
+                        td #{note.date}
+                        td #{note.description}
+            tr.success
+                td.titre(colspan=2) Visites
+            tr
+                td.gras Date
+                td.gras Compte-rendu
+            -if (dossier.visites)
+                each visite in dossier.visites
+                    tr
+                        td #{visite.date}
+                        td #{visite.description}
+            tr.success
+                td.titre(colspan=2) Suivis
+            tr
+                td.gras Date d'activation
+                td.gras Description
+            -if (dossier.suivis)
+                each suivi in dossier.suivis
+                    tr
+                        td #{suivi.date}
+                        td #{suivi.description}

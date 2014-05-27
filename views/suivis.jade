@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    .row-fluid
+        .span4
+        .span4
+            h1= title
+
+    table.table
+        thead
+            tr
+                th Date
+                th Numéro de dossier
+                th Description du suivi
+        tbody
+            each suivi in suivis
+                -var auj = (suivi.auj ? 'success' : '')
+                tr(class=auj)
+                    td #{suivi.dateSuivi}
+                    td
+                        a(href="/#{suivi.dossierNo}") #{suivi.dossierNo}
+                    td #{suivi.descSuivi}
+                    
+

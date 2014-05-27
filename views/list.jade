@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    .row-fluid
+        .span4
+        .span4
+            h1= title
+
+    .row-fluid.well.couleur
+        .span3
+        .span6
+            .span1
+            .span4
+                a.btn.btn-danger(href="/suivis") Liste des suivis
+            .span4
+                a.btn.btn-danger(href="/nouveau") Entrer un nouveau dossier
+    table.table
+        thead
+            tr
+                th Nom
+                th Numéro de dossier
+                th Dernière visite
+        tbody   
+            each val in dossier
+                - var url = "/" + val.numero;
+                tr
+                    td 
+                        a(href=url) #{val.nom}, #{val.prenom}
+                    td #{val.numero}
+                    td
+                        - if(val.date !== undefined) 
+                            | #{val.date}
+                        - else
+                            | Aucune visite
+
+

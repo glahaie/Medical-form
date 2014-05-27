@@ -1,0 +1,11 @@
+td.titre {
+  text-align: center;
+  font-weight: bold;
+  font-size: 150%;
+}
+.gras {
+  font-weight: bold;
+}
+.couleur {
+  background: #dff0d8;
+}

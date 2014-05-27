@@ -1,0 +1,21 @@
+{
+  "name": "dossier-med",
+  "description": "Version de remise 2: l'application permet d'entrer un nouveau dossier,de voir la liste des dossiers, de voir la liste des suivis, de visionner les détails d'un dossier, et de modifier un dossier. Lors de l'entrée d'un nouveau dossier, on vérifie si les informations correspondent au format attendu, et si le formulaire contient les informations requises. Pour la modification de dossier, on fait le même travail, mais l'enregistrement des modifications se fait automatiquement.",
+  "author": "Guillaume Lahaie",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.4.0",
+    "jade": "*",
+    "stylus": "*",
+    "xml2js": "*",
+    "xmldom": "*",
+    "pretty-data":"*",
+    "coffee-script": "1.7.1",
+    "stable":"*",
+    "moment": "*"
+  }
+}
